@@ -4,11 +4,12 @@ $.fn.select = (options)->
 	result = $('<div>')
 	result.text 'Select...'
 	ul = $('<ul>').css 'display', 'none'
-	Object.keys(list).forEach (el)->
-		li = $('<li>').attr('data-value', list[el]).text(el)
-		ul.append(li)
-	@.append(result).append(ul)
-
-	# events
 	result.on 'click', ->
 		ul.toggle()
+
+	Object.keys(list).forEach (el)->
+		li = $('<li>').text(el)
+		li.on 'click', ->
+			result.attr('data-value', list[el]).text(el)
+		ul.append(li)
+	@.append(result).append(ul)

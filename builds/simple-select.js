@@ -7,15 +7,18 @@
     result = $('<div>');
     result.text('Select...');
     ul = $('<ul>').css('display', 'none');
-    Object.keys(list).forEach(function(el) {
-      var li;
-      li = $('<li>').attr('data-value', list[el]).text(el);
-      return ul.append(li);
-    });
-    this.append(result).append(ul);
-    return result.on('click', function() {
+    result.on('click', function() {
       return ul.toggle();
     });
+    Object.keys(list).forEach(function(el) {
+      var li;
+      li = $('<li>').text(el);
+      li.on('click', function() {
+        return result.attr('data-value', list[el]).text(el);
+      });
+      return ul.append(li);
+    });
+    return this.append(result).append(ul);
   };
 
 }).call(this);
