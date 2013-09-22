@@ -5,5 +5,6 @@ $.fn.select = (options)->
 	result.text 'Select...'
 	ul = $('<ul>').css 'display', 'none'
 	Object.keys(list).forEach (el)->
-		ul.append("<li data-value=\"#{list[el]}\">#{el}</li>")
+		li = $('<li>').attr('data-value', list[el]).text(el)
+		ul.append(li)
 	@.append(result).append(ul)
