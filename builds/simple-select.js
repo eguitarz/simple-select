@@ -14,7 +14,8 @@
       var li;
       li = $('<li>').text(el);
       li.on('click', function() {
-        return result.attr('data-value', list[el]).text(el);
+        result.attr('data-value', list[el]).text(el);
+        return ul.toggle();
       });
       return ul.append(li);
     });
