@@ -1,7 +1,9 @@
 $.fn.select = (options)->
 	list = options.list || {'Not specified': null}
 
-	ul = $('<ul>')
+	result = $('<div>')
+	result.text 'Select...'
+	ul = $('<ul>').css 'display', 'none'
 	Object.keys(list).forEach (el)->
 		ul.append("<li data-value=\"#{list[el]}\">#{el}</li>")
-	@.html ul
+	@.append(result).append(ul)
