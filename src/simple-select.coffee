@@ -8,3 +8,7 @@ $.fn.select = (options)->
 		li = $('<li>').attr('data-value', list[el]).text(el)
 		ul.append(li)
 	@.append(result).append(ul)
+
+	# events
+	result.on 'click', ->
+		ul.toggle()

@@ -8,9 +8,14 @@
     result.text('Select...');
     ul = $('<ul>').css('display', 'none');
     Object.keys(list).forEach(function(el) {
-      return ul.append("<li data-value=\"" + list[el] + "\">" + el + "</li>");
+      var li;
+      li = $('<li>').attr('data-value', list[el]).text(el);
+      return ul.append(li);
     });
-    return this.append(result).append(ul);
+    this.append(result).append(ul);
+    return result.on('click', function() {
+      return ul.toggle();
+    });
   };
 
 }).call(this);
