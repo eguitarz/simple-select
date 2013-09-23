@@ -14,3 +14,8 @@ $.fn.select = (options)->
 			ul.toggle()
 		ul.append(li)
 	@.append(result).append(ul)
+
+	$(document).on 'click', (e)=>
+		console.log @.has( $(e.target) ).length
+		if @.has( $(e.target) ).length == 0
+			ul.hide()

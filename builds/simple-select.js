@@ -1,6 +1,7 @@
 (function() {
   $.fn.select = function(options) {
-    var list, result, ul;
+    var list, result, ul,
+      _this = this;
     list = options.list || {
       'Not specified': null
     };
@@ -19,7 +20,13 @@
       });
       return ul.append(li);
     });
-    return this.append(result).append(ul);
+    this.append(result).append(ul);
+    return $(document).on('click', function(e) {
+      console.log(_this.has($(e.target)).length);
+      if (_this.has($(e.target)).length === 0) {
+        return ul.hide();
+      }
+    });
   };
 
 }).call(this);
