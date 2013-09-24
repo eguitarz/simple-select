@@ -7,24 +7,23 @@
     };
     result = $('<div>');
     result.text('Select...');
-    ul = $('<ul>').css('display', 'none');
+    ul = $('<ul>');
     result.on('click', function() {
-      return ul.toggle();
+      return ul.toggleClass('show');
     });
     Object.keys(list).forEach(function(el) {
       var li;
       li = $('<li>').text(el);
       li.on('click', function() {
         result.attr('data-value', list[el]).text(el);
-        return ul.toggle();
+        return ul.toggleClass('show');
       });
       return ul.append(li);
     });
     this.append(result).append(ul);
     return $(document).on('click', function(e) {
-      console.log(_this.has($(e.target)).length);
       if (_this.has($(e.target)).length === 0) {
-        return ul.hide();
+        return ul.removeClass('show');
       }
     });
   };

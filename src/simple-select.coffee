@@ -3,18 +3,18 @@ $.fn.select = (options)->
 
 	result = $('<div>')
 	result.text 'Select...'
-	ul = $('<ul>').css 'display', 'none'
+	ul = $('<ul>')
 	result.on 'click', ->
-		ul.toggle()
+		ul.toggleClass 'show'
 
 	Object.keys(list).forEach (el)->
 		li = $('<li>').text(el)
 		li.on 'click', ->
 			result.attr('data-value', list[el]).text(el)
-			ul.toggle()
+			ul.toggleClass 'show'
 		ul.append(li)
 	@.append(result).append(ul)
 
 	$(document).on 'click', (e)=>
 		if @.has( $(e.target) ).length == 0
-			ul.hide()
+			ul.removeClass 'show'
