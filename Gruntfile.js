@@ -153,7 +153,7 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         files: {
-          '<%= config.dist %>/github-calendar.min.js': [
+          '<%= config.dist %>/simple-select.min.js': [
               '<%= config.src %>/{,*/}*.js',
               '.tmp/{,*/}*.js'
           ],
