@@ -290,6 +290,14 @@ module.exports = function (grunt) {
           src: [
             '*.js'
           ]
+        }, {
+          expand: true,
+          dot: true,
+          cwd: '<%= config.dev %>/styles',
+          dest: '<%= config.release %>',
+          src: [
+            '*.css'
+          ]
         }]
       }
     }
