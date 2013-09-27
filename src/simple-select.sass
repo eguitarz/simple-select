@@ -1,31 +1,34 @@
 #simple-select
 	position: relative
-	> div
+	> div:first-child
 		cursor: pointer
 		border-bottom: 1px #000 dotted
-	ul
-		position: absolute
-		margin: 0
-		padding: 0
-		opacity: 0
-		width: 100%
-		top: 23px
-		border: 1px #000 solid
-		background-color: #fff
-		transition: all, 300ms
-		-moz-transition: all, 300ms
-		-webkit-transition: all, 300ms
-		pointer-events: none
-		-webkit-user-select: none
-		-moz-user-select: none
-		-ms-user-select: none
-		&.show
-			pointer-events: auto
-			opacity: 1
-		li
-			padding-left: 10px
-			list-style-type: none
-			cursor: pointer
-			&:hover
-				color: #fff
-				background-color: #333
+	.options
+		position: relative
+		ul
+			position: absolute
+			margin: 0
+			padding: 0
+			opacity: 0
+			width: 100%
+			top: -2em
+			border: 1px #000 solid
+			background-color: #fff
+			transition: all, 300ms
+			-moz-transition: all, 300ms
+			-webkit-transition: all, 300ms
+			pointer-events: none
+			-webkit-user-select: none
+			-moz-user-select: none
+			-ms-user-select: none
+			&.show
+				pointer-events: auto
+				opacity: 1
+				top: -1px
+			li
+				padding-left: 10px
+				list-style-type: none
+				cursor: pointer
+				&:hover
+					color: #fff
+					background-color: #333
