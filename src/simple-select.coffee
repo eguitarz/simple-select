@@ -13,7 +13,9 @@ $.fn.select = (options)->
 			result.attr('data-value', list[el]).text(el)
 			ul.toggleClass 'show'
 		ul.append(li)
-	@.append(result).append(ul)
+	wrapper = $('<div>').addClass 'options'
+	wrapper.append(ul)
+	@.append(result).append(wrapper)
 
 	$(document).on 'click', (e)=>
 		if @.has( $(e.target) ).length == 0
