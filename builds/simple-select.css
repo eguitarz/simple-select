@@ -3,18 +3,22 @@
   position: relative;
 }
 /* line 3, ../../src/simple-select.sass */
-#simple-select > div {
+#simple-select > div:first-child {
   cursor: pointer;
   border-bottom: 1px black dotted;
 }
 /* line 6, ../../src/simple-select.sass */
-#simple-select ul {
+#simple-select .options {
+  position: relative;
+}
+/* line 8, ../../src/simple-select.sass */
+#simple-select .options ul {
   position: absolute;
   margin: 0;
   padding: 0;
   opacity: 0;
   width: 100%;
-  top: 23px;
+  top: -2em;
   border: 1px black solid;
   background-color: white;
   transition: all, 300ms;
@@ -25,19 +29,20 @@
   -moz-user-select: none;
   -ms-user-select: none;
 }
-/* line 22, ../../src/simple-select.sass */
-#simple-select ul.show {
+/* line 24, ../../src/simple-select.sass */
+#simple-select .options ul.show {
   pointer-events: auto;
   opacity: 1;
+  top: -1px;
 }
-/* line 25, ../../src/simple-select.sass */
-#simple-select ul li {
+/* line 28, ../../src/simple-select.sass */
+#simple-select .options ul li {
   padding-left: 10px;
   list-style-type: none;
   cursor: pointer;
 }
-/* line 29, ../../src/simple-select.sass */
-#simple-select ul li:hover {
+/* line 32, ../../src/simple-select.sass */
+#simple-select .options ul li:hover {
   color: white;
   background-color: #333333;
 }

@@ -1,6 +1,6 @@
 (function() {
   $.fn.select = function(options) {
-    var list, result, ul,
+    var list, result, ul, wrapper,
       _this = this;
     list = options.list || {
       'Not specified': null
@@ -20,7 +20,9 @@
       });
       return ul.append(li);
     });
-    this.append(result).append(ul);
+    wrapper = $('<div>').addClass('options');
+    wrapper.append(ul);
+    this.append(result).append(wrapper);
     return $(document).on('click', function(e) {
       if (_this.has($(e.target)).length === 0) {
         return ul.removeClass('show');
