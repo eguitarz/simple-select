@@ -12,6 +12,15 @@ use
 ```html
 <link rel="stylesheet" href="styles/simple-select.css">
 <script src="simple-select.js"></script>
+<script>
+$('#simple-select').select({
+  list: {
+    cat: 1, 
+    dog: 2, 
+    human: 3
+  }
+})
+</script>
 ```
 
 example
