@@ -2,7 +2,7 @@ $.fn.select = (options)->
 	list = options.list || {'Not specified': null}
 
 	result = $('<div>')
-	result.text 'Select...'
+	result.text options.default || 'Select...'
 	ul = $('<ul>')
 	result.on 'click', ->
 		ul.toggleClass 'show'
